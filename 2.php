@@ -13,7 +13,7 @@
 
 </form>
 <?php 
-if(isset($_POST['submit'])
+if(isset($_POST['submit'])){
 $first = $_POST['first'];                                           
 
 function getLongestWords($a){

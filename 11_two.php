@@ -1,6 +1,13 @@
-<?php
+<?php 
 if(isset($_POST['submit']) && !empty($_POST['sentence'])){
 $sen = $_POST['sentence'];
+
+function multiexplode ($delimiters,$string) {
+    
+    $ready = str_replace($delimiters, $delimiters[0], $string);
+    $launch = explode($delimiters[0], $ready);
+    return  $launch;
+}
 
 if (!function_exists('mb_ucfirst') && function_exists('mb_substr')) {
     function mb_ucfirst($string) {
@@ -10,9 +17,9 @@ if (!function_exists('mb_ucfirst') && function_exists('mb_substr')) {
 }
 function toUp($sentence){
 	$arrUp = array();
-	foreach($arr = explode('.',$sentence)as $chanck){
-	$chanckToUp = mb_ucfirst($chanck);
-	array_push($arrUp,$chanckToUp);
+	foreach($arr = multiexplode(array('.','. '),$sentence)as $chunck){
+	$chunckToUp = mb_ucfirst($chunck);
+	array_push($arrUp,$chunckToUp);
     }
 	$str = implode('. ',$arrUp);
 	echo $str;

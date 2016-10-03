@@ -10,6 +10,6 @@ if($handle = opendir($dir)){
 	}
 }
 }
- write_out_files("C:/xampp/htdocs/arrays_loops_tasks");
+ write_out_files("C:/xampp/htdocs");
  //writ_out_files("C:/xampp/htdocs/yii_2project");
 ?>
